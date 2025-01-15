@@ -5,24 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        ul li:hover{
-            color: black;
-        }
-        
-    </style>
 </head>
 <body>
 
-    <div class="navbar items-center justify-center flex bg-[#E2781A]">
-        <ul class="uppercase flex gap-16 p-6 text-[18px] text-white font-semibold">
-            <li>home</li>
-            <li>landing</li>
-            <li>about</li>
-            <li>menu</li>
-            <li>contact</li>
-        </ul>
-    </div>
+<div class="navbar items-center justify-between flex bg-[#E2781A] p-6">
+    <!-- Logo Section -->
+    <div class="text-white text-2xl font-bold">LOGO</div>
+
+    <!-- Hamburger Icon for Small Screens -->
+    <button class="block md:hidden text-white focus:outline-none" id="menu-toggle">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+
+    <!-- Navigation Links -->
+    <ul class="uppercase flex-col md:flex-row md:flex gap-8 p-1 text-[18px] text-white font-semibold hidden" id="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Landing</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Menu</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
     <div class="h-auto grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2 ">
         <div class="">
             <img class="lg:h-full" src="images/3035613-98.jpg" alt="">
@@ -254,5 +259,16 @@
         <p class="text-white text-sm text-center pt-[100px]">Sample text. Click to select the Text Element.</p>
     </footer>
     
+
+
+
+    <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('hidden');
+    });
+</script>
 </body>
 </html>
